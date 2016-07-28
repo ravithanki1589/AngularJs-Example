@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+<div test-Second></div>
+<div class=".test-Third"></div>
+<test-First></test-First>
+
+<!-- directive: test-Fourth -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("testFirst", function() {
+    return {
+        restrict : "E",
+        template : "<h1>First</h1>"
+    };
+});
+
+app.directive("testSecond", function() {
+    return {
+        restrict : "A",
+        template : "<h1>Second</h1>"
+    };
+});
+
+
+app.directive("testThird", function() {
+    return {
+        restrict : "C",
+        template : "<h1>Third</h1>"
+    };
+});
+
+app.directive("testFourth", function() {
+    return {
+        restrict : "M",
+		 replace : true,
+        template : "<h1>Fourth</h1>"
+    };
+});
+</script>
+
+
+
+</body>
+</html>
+
